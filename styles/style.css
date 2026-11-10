@@ -165,7 +165,6 @@ nav ul a[aria-current="page"] {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
         url("../images/header-hero-banner.png");
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -197,8 +196,7 @@ nav ul a[aria-current="page"] {
     flex-wrap: wrap;
 }
 
-/* Phone images overlapping the banner */
-/* Phone images overlapping the banner */
+/* Phone images container */
 .hero-phone-screen-images {
     display: flex;
     justify-content: center;
@@ -209,27 +207,27 @@ nav ul a[aria-current="page"] {
     z-index: 2;
 }
 
-.hero-phone-screen-images img {
+/* First phone - left side */
+.phone-screen-one {
     width: 300px;
     height: auto;
-    animation: floatPhone 3s ease-in-out infinite;
-}
-
-/* Left phone: same size, slightly lower */
-.hero-phone-screen-images img:first-child {
     margin-right: -65px;
     transform: rotate(-8deg);
     position: relative;
     top: 25px;
     z-index: 1;
+    animation: floatPhone 3s ease-in-out infinite;
 }
 
-/* Right phone: same size, slightly higher */
-.hero-phone-screen-images img:nth-child(2) {
+/* Second phone - right side */
+.phone-screen-two {
+    width: 300px;
+    height: auto;
     transform: rotate(8deg);
     position: relative;
     top: 0;
     z-index: 2;
+    animation: floatPhone 3s ease-in-out infinite;
     animation-delay: 0.5s;
 }
 
@@ -707,13 +705,17 @@ nav ul a[aria-current="page"] {
         margin-top: -40px;
     }
 
-   .hero-phone-screen-images img:first-child {
-    width: 43%;
-    }
+   /* Keep both phone images the same size on mobile */
+.hero-phone-screen-images img:first-child {
+    width: 45%;
+    margin-right: -8%;
+    top: 25px;
+}
 
 .hero-phone-screen-images img:nth-child(2) {
-    width: 55%;
-    }
+    width: 45%;
+    top: 0;
+}
 
     /* Mobile download section */
     .footer-hero-section {
